@@ -9,7 +9,7 @@
 <body>
     <section>
         <h1 class="header">SCORE GRADING SYSTEM</h1>
-        <label for="Name">Name: <input type="text"></label>
+        <label for="Name">Name: <input id="username" type="text"></label>
         <label for="Class">Class: 
             <select name="" id="">
                 <option value="">SSS 1</option>
@@ -38,14 +38,76 @@
 
         <div class="seconddiv">
             <h1>SCORES</h1>
-            <input type="number"> <br>
-            <input type="number"> <br>
-            <input type="number"> <br>
-            <input type="number"> <br>
-            <input type="number"> <br>
+            <input id="firstscore" type="number"> <br>
+            <input id="secondscore" type="number"> <br>
+            <input id="thirdscore" type="number"> <br>
+            <input id="fourthscore" type="number"> <br>
+            <input id="fifthscore" type="number"> <br>
         </div>
     </main>
+
+    <button id="getgrade" onclick="getgrade()">GET GRADE</button>
+    <button id="remove" onclick="remove()">RESET</button>
+
+    <div class="performance">
+        <label for="Total Score">TOTAL SCORE: <input id="totalscore" type="number" readonly></label> <br>
+        <label for="Average Score">SCORES PERCENTAGE: <input id="averagescore" type="number" readonly></label> <br>
+        <label for="Grade">GRADE: <input id="grad" type="text" readonly></label> <br>
+        <label for="Remark">REMARK: <input id="remark" type="text" readonly></label>
+    </div>
+
+    
     <script>
+        var total = (parseInt(document.getElementById("firstscore").value)+parseInt(document.getElementById("secondscore").value)+parseInt(document.getElementById("thirdscore").value)+parseInt(document.getElementById("fourthscore").value)+parseInt(document.getElementById("fifthscore").value))
+
+        function getgrade(){
+            document.getElementById("totalscore").value = (parseInt(document.getElementById("firstscore").value)+parseInt(document.getElementById("secondscore").value)+parseInt(document.getElementById("thirdscore").value)+parseInt(document.getElementById("fourthscore").value)+parseInt(document.getElementById("fifthscore").value))
+            document.getElementById("averagescore").value = (document.getElementById("totalscore").value)/5;
+
+
+
+            var peace = document.getElementById("totalscore").value
+            if (peace>=400 && peace<=500) {
+            document.getElementById("grad").value="A"
+            document.getElementById("remark").value="Excellent performance, Keep it up."
+            }
+
+            else if(peace>=350 && peace<=399){
+                document.getElementById("grad").value="B"
+                document.getElementById("remark").value="Good performance, You can do better."
+            }
+
+            else if(peace>=250 && peace<=349){
+                document.getElementById("grad").value="C"
+                document.getElementById("remark").value="Nice performance, you can do better."
+            }
+
+            else if(peace>=200 && peace<=249){
+                document.getElementById("grad").value="D"
+                document.getElementById("remark").value="Average performance, you can do better."
+            }
+
+            else{
+                document.getElementById("grad").value=""
+                document.getElementById("remark").value="Woeful performance, There is a lot of work to do."
+            }
+        }
+
+        function remove(){
+            document.getElementById("username").value=""
+            document.getElementById("firstscore").value=""
+            document.getElementById("secondscore").value=""
+            document.getElementById("thirdscore").value=""
+            document.getElementById("fourthscore").value=""
+            document.getElementById("fifthscore").value=""
+            document.getElementById("totalscore").value=""
+            document.getElementById("averagescore").value=""
+            document.getElementById("grad").value=""
+            document.getElementById("remark").value=""
+        }
+
+        // var peace = (parseInt(document.getElementById("firstscore").value)+parseInt(document.getElementById("secondscore").value)+parseInt(document.getElementById("thirdscore").value)+parseInt(document.getElementById("fourthscore").value)+parseInt(document.getElementById("fifthscore").value))
+       
 
     </script>
 </body>

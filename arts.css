@@ -36,6 +36,10 @@ section select{
     font-size: 18px;
 }
 
+#username{
+    width: 300px;
+}
+
 main{
     height: 40vh;
     width: 50vw;
@@ -74,4 +78,32 @@ main{
 .seconddiv input{
     margin-bottom: 30px;
     font-size: 18px;
+}
+
+#getgrade{
+    background: greenyellow;
+    padding: 10px;
+    font-weight: bold;
+    margin-left: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#remove{
+    background: red;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.performance label{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.performance input{
+    font-size: 18px;
+}
+
+#remark{
+    width: 500px;
 }
