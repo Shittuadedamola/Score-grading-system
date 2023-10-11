@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(203, 207, 229, 1), rgb(117, 19, 93, 0.73)), url(images/trifecta.jpeg);
+    background-size: cover;
+}
+
+h1{
+    font-size: 60px;
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 25vh;
+}
+
+li{
+    text-align: center;
+    list-style: square;
+    font-size: 40px;
+    color: brown;
+}
+
+a{
+    text-decoration: none;
+    color: wheat;
+}
